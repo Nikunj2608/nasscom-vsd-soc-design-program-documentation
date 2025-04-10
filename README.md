@@ -2,3 +2,6 @@
 ![Project Screenshot](assets/1.png)
 ## Overview
 In this documentation, we'll deep dive into the chip's internal building blocks and explore what lies inside the chip itself. Understanding the fundamental architecture and components that make up modern System-on-Chip designs is crucial for effective SoC development. We'll examine the various functional units, interconnects, memory systems, and peripheral interfaces that together form the complete integrated circuit solution.
+![Project Screenshot](assets/2.png)
+## System Architecture Block Diagram
+The block diagram illustrates the typical architecture of our processor system and its essential components. At the center lies the main processor core, surrounded by various peripheral interfaces that enable communication with external devices. The system includes a JTAG interface for programming and debugging the processor, QSPI1-Flash for non-volatile storage, and an I2C0 bus for connecting to EEPROM. Power management is handled through VCC and ground connections, while analog input capabilities are provided by ADC channels that are multiplexed with GPIO pins for flexible I/O configurations. An SDRAM interface allows for mounting external memory chips to expand the system's memory capacity. This represents the standard layout of a complete embedded processing solution on a single board.
