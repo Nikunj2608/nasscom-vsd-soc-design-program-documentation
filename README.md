@@ -12,7 +12,9 @@ The block diagram illustrates the typical architecture of our processor system a
 The processor is housed in a QFN-48 package (Quad Flat No-leads), which is a common package type in modern electronics. This particular package measures 7×7 mm, with the silicon chip positioned in the center of the package. The connection between the chip and the package is established through wire bonds, which are thin metal wires that transfer signals between the chip's pads and the package's leads. This wire bonding technique enables the external signals to reach the internal circuitry of the chip and allows the chip to communicate with the outside world.
 
 ![Project Screenshot](assets/4.png)
+
 The silicon die contains metal pads around its perimeter that serve as the interface points for electrical connections. These pads are the critical junctions where signals transition between the external package and the internal chip circuitry. Via these pads, electrical signals can be transmitted into and out of the chip, allowing the processor to interact with external components on the board while executing its internal operations.
 
 ![Project Screenshot](assets/5.png)
+
 At the heart of the chip is the core, which contains all the digital logic circuitry - the chipsets, OR gates, AND gates, and various other logic elements that perform the processor's computational functions. The die represents the entire silicon chip, encompassing both the core and the peripheral circuitry. This silicon foundation is where all the transistors and interconnects are fabricated to create the complete integrated circuit.
