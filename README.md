@@ -18,3 +18,11 @@ The silicon die contains metal pads around its perimeter that serve as the inter
 ![Project Screenshot](assets/5.png)
 
 At the heart of the chip is the core, which contains all the digital logic circuitry - the chipsets, OR gates, AND gates, and various other logic elements that perform the processor's computational functions. The die represents the entire silicon chip, encompassing both the core and the peripheral circuitry. This silicon foundation is where all the transistors and interconnects are fabricated to create the complete integrated circuit.
+
+![Project Screenshot](assets/6.png)
+
+A typical modern chip integrates several critical components that function together as a complete system. At its center is the RISC-V SoC (System-on-Chip), which serves as the main processing unit implementing the open-standard RISC-V instruction set architecture. Supporting the processor is SRAM (Static Random-Access Memory) that provides fast, volatile memory storage for immediate data access.
+
+For interfacing with analog signals, the chip incorporates DAC (Digital-to-Analog Converter) and multiple ADC (Analog-to-Digital Converter) blocks like ADC0 and ADC1, enabling the digital chip to interact with the analog world. The PLL (Phase-Locked Loop) generates stable clock signals necessary for synchronizing all digital operations within the chip.
+
+These components are typically implemented as foundry IPs (Intellectual Property blocks) - pre-designed, pre-verified functional units provided by semiconductor foundries that chip designers can incorporate into their designs. Using these foundry IPs significantly reduces development time and ensures reliable performance of critical functions within the SoC design.
