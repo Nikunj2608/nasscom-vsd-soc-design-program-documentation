@@ -28,3 +28,28 @@ For interfacing with analog signals, the chip incorporates DAC (Digital-to-Analo
 These components are typically implemented as foundry IPs (Intellectual Property blocks) - pre-designed, pre-verified functional units provided by semiconductor foundries that chip designers can incorporate into their designs. Using these foundry IPs significantly reduces development time and ensures reliable performance of critical functions within the SoC design.
  
 In addition to foundry IPs, chip designs also utilize macros - pre-designed functional blocks that are smaller than full IPs but larger than standard cells. Macros include elements such as memory arrays, register files, multipliers, and other specialized functions that can be reused across different parts of the design or in multiple projects. They can be either hard macros with fixed layouts or soft macros with parameterizable designs. By leveraging these pre-verified building blocks, designers can focus on system-level architecture and custom logic while reducing development time and minimizing design risks.
+
+## Software-to-Hardware Execution Flow
+
+![screenshot](assets/7.jpg)
+
+### From C Program to Hardware Execution
+When developing applications for this SoC, the software development process follows a specific flow to transform high-level code into hardware-executable instructions. The process begins with a C program written by the developer, which then undergoes several transformation stages:
+
+1. **C Compilation**: The C program is first compiled into RISC-V assembly language using a specialized RISC-V compiler toolchain. This assembly code represents the program in human-readable instructions specific to the RISC-V architecture.
+
+2. **Assembly to Machine Code**: The RISC-V assembly language program is then assembled into machine code (binary format). These binary instructions are what the processor hardware can directly execute.
+
+3. **Program Execution**: The compiled binary is loaded into the chip's memory through interfaces like JTAG or QSPI Flash. The PicoRV32 CPU core reads and executes these instructions, interacting with various peripheral components as directed by the program.
+
+### Hardware Implementation
+The hardware side of this execution environment is implemented using:
+
+- **RTL (Register Transfer Level)**: The PicoRV32 CPU core is implemented in HDL (Hardware Description Language), which defines the digital logic circuits and their behavior.
+
+- **RTL to Layout Flow**: Using the QFlow digital synthesis and place-and-route toolchain, the RTL description of the PicoRV32 core is transformed into a physical chip layout that can be manufactured.
+
+- **Standard Cell Library**: The design uses standard cells for implementation, allowing for a structured approach to creating the complex digital logic required by the processor.
+
+This seamless integration between software development and hardware implementation enables efficient execution of user applications on the physical chip, with the RISC-V architecture serving as the bridge between programmer intent and hardware execution.
+
